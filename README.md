@@ -1,3 +1,5 @@
+# salad-browserstack
+
 A sample to run salad tests over BrowserStack Automate.
 
 1. First install depenedencies:
