@@ -4,9 +4,9 @@ from selenium import webdriver
 from salad.terrains.everything import *
 # Edit these to match your credentials
 USERNAME = "<browserstack-username>"
-BROWSERSTACK_KEY = "<browserstack-key>"
+BROWSERSTACK_ACCESS_KEY = "<browserstack-key>"
 
-if not (USERNAME and BROWSERSTACK_KEY):
+if not (USERNAME and BROWSERSTACK_ACCESS_KEY):
     raise Exception("Please provide your BrowserStack username and access key")
     sys.exit(1)
 
@@ -19,7 +19,7 @@ def setup_browser():
     world.browser = webdriver.Remote(
         desired_capabilities=desired_capabilities,
         command_executor="http://%s:%s@hub.browserstack.com/wd/hub" % (
-            USERNAME, BROWSERSTACK_KEY
+            USERNAME, BROWSERSTACK_ACCESS_KEY
         )
     )
 
